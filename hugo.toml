@@ -1,0 +1,17 @@
+baseURL = "https://swiftscripters.github.io/"
+languageCode = "en-us"
+title = "SwiftScripters"
+
+[params]
+  tagline = "Free, open-source software by S4NDM4N"
+  github  = "https://github.com/SwiftScripters"
+
+[menu]
+  [[menu.main]]
+    name   = "Home"
+    url    = "/"
+    weight = 1
+  [[menu.main]]
+    name   = "Projects"
+    url    = "/projects/"
+    weight = 2

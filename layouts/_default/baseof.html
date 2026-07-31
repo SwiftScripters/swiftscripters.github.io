@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ .Site.Params.tagline }}">
+  <link rel="icon" type="image/png" href="{{ "img/favicon.png" | relURL }}">
+  <link rel="preload" href="{{ "fonts/JetBrainsMono-Regular.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 </head>
 <body>

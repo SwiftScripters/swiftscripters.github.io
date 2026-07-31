@@ -1,11 +1,16 @@
 {{ define "main" }}
+<span class="section-label">Projects</span>
 <h1>{{ .Title }}</h1>
-{{ .Content }}
+<div class="projects-intro">{{ .Content }}</div>
 <div class="grid">
   {{ range .Pages }}
   <a class="card" href="{{ .RelPermalink }}">
     <h3>{{ .Title }}</h3>
-    <p>{{ .Params.summary | default .Summary }}</p>
+    <p class="summary">{{ .Params.summary | default .Summary }}</p>
+    <div class="meta">
+      {{ with .Params.language }}<span>{{ . }}</span>{{ end }}
+      {{ with .Params.license }}<span>{{ . }}</span>{{ end }}
+    </div>
   </a>
   {{ end }}
 </div>

@@ -1,23 +1,40 @@
 {{ define "main" }}
 <section class="hero">
   <h1>{{ .Site.Title }}</h1>
-  <p>{{ .Site.Params.tagline }}</p>
+  <p class="tagline">{{ .Site.Params.tagline }}</p>
 </section>
 
 <section class="content">
   {{ .Content }}
 </section>
 
+<section class="support">
+  <span class="section-label">Support</span>
+  <h2>Free &amp; open source, sponsorship-supported</h2>
+  <p>SwiftScripters is maintained solo and released under open-source licenses. Sponsorships
+    keep it going &mdash; every project stays free to use either way.</p>
+  <div class="support-actions">
+    {{ with .Site.Params.sponsor }}
+      <a class="btn btn-primary" href="{{ . }}" target="_blank" rel="noopener">Sponsor on GitHub</a>
+    {{ end }}
+    <a class="btn btn-secondary" href="{{ .Site.Params.github }}" target="_blank" rel="noopener">View source on GitHub</a>
+  </div>
+</section>
+
 <section class="project-preview">
-  <h2>Projects</h2>
+  <span class="section-label">Projects</span>
   <div class="grid">
     {{ range first 6 (where .Site.RegularPages "Type" "projects") }}
     <a class="card" href="{{ .RelPermalink }}">
       <h3>{{ .Title }}</h3>
-      <p>{{ .Params.summary | default .Summary }}</p>
+      <p class="summary">{{ .Params.summary | default .Summary }}</p>
+      <div class="meta">
+        {{ with .Params.language }}<span>{{ . }}</span>{{ end }}
+        {{ with .Params.license }}<span>{{ . }}</span>{{ end }}
+      </div>
     </a>
     {{ end }}
   </div>
-  <p><a href="{{ "/projects/" | relURL }}">View all projects &rarr;</a></p>
+  <p class="view-all"><a href="{{ "/projects/" | relURL }}">View all projects</a></p>
 </section>
 {{ end }}

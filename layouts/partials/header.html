@@ -1,11 +1,16 @@
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+    <a class="brand" href="{{ "/" | relURL }}">
+      <img src="{{ "img/logo.png" | relURL }}" alt="{{ .Site.Title }}">
+    </a>
     <nav>
       {{ range .Site.Menus.main }}
         <a href="{{ .URL | relURL }}">{{ .Name }}</a>
       {{ end }}
       <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a>
+      {{ with .Site.Params.sponsor }}
+        <a class="nav-sponsor" href="{{ . }}" target="_blank" rel="noopener">Sponsor</a>
+      {{ end }}
     </nav>
   </div>
 </header>

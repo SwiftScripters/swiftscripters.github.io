@@ -3,8 +3,9 @@ languageCode = "en-us"
 title = "SwiftScripters"
 
 [params]
-  tagline = "Free, open-source software by S4NDM4N"
+  tagline = "Code That's Swift, Solutions That Stick."
   github  = "https://github.com/SwiftScripters"
+  sponsor = "https://github.com/sponsors/SwiftScripters"
 
 [menu]
   [[menu.main]]

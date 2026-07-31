@@ -70,5 +70,5 @@ commit regardless of what a session's default commit template suggests.
 
 ## Deployment
 
-Pushing to `main` triggers `.github/workflows/hugo.yml` (Hugo build + GitHub Pages deploy). No
+Pushing to `master` triggers `.github/workflows/hugo.yml` (Hugo build + GitHub Pages deploy). No
 manual deploy steps.

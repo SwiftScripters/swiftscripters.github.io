@@ -6,6 +6,13 @@ this back up. Newest entry on top. Summarize what changed and *why*, not a line-
 
 ## [Unreleased]
 
+### 2026-07-31 — Fix deploy workflow not auto-triggering
+
+- `.github/workflows/hugo.yml` was watching `push: branches: ["main"]`, but this repo's
+  default branch is `master` — so every push required a manual `workflow_dispatch` run to
+  deploy. Changed the trigger branch to `master` to match. Also corrected stray `main`
+  references in `README.md` and `CLAUDE.md`.
+
 ### 2026-07-31 — Custom code-themed design + real project content
 
 - Replaced the placeholder dark theme with a navy/white/blue palette sampled from the
